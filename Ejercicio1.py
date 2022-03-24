@@ -37,4 +37,5 @@ class Libro():
         self.precio=price
 
 libro1 = Libro('ESDLA','Tolkien','Minotauro','20-10-1995','Fantasía',20)
+libro1.set_autor('J.Tolkien')
 
