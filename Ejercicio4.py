@@ -37,8 +37,24 @@ class PlazoFijo(Cuenta_Bank):
         else:
             raise Exception("No tienes suficiente saldo")
 
+class VIP(Cuenta_Bank):
+    def __init__(self,negativo_max):
+        self.negativo_max = negativo_max
 
-    
+    def retirar_dinero(self,cantidad):
+        if self.saldo -cantidad > self.negativo_max:
+            self.saldo = self.saldo - cantidad
+        else:
+            raise Exception("La retirada supera el límite")
+
+    def transferir_dinero(self, cuenta2, cantidad):
+        try:
+            self.retirar_dinero(cantidad)
+            cuenta2.ingresar_dinero(cantidad)
+        except:
+            raise Exception("La retirada supera el límite")
+
+
 
 
 
