@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class Cuenta_Bank():
     def __init__(self,id=int,titular=str,fecha=int,num_cuenta=float,saldo=float):
         self.id = id
@@ -21,6 +23,22 @@ class Cuenta_Bank():
             cuenta2.ingresar_dinero(cantidad)
         except:
             raise Exception("No tienes suficiente saldo")
+
+class PlazoFijo(Cuenta_Bank):
+    def __init__(self,fecha_vencimento):
+        self.fecha_vencimento =  fecha_vencimento
+
+    def retirar_dinero(self,cantidad):
+        if self.saldo > cantidad:
+            if datetime.now() < self.fecha_vencimento:
+                self.saldo = self.saldo - cantidad-(0,5*cantidad)
+            else:
+                self.saldo = self.saldo - cantidad
+        else:
+            raise Exception("No tienes suficiente saldo")
+
+
+    
 
 
 
