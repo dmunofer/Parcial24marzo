@@ -21,3 +21,16 @@ class Libro():
         return self.genero
     def get_precio(self):
         return self.precio
+
+    def set_titulo(self, title):
+        self.titulo = title
+    def set_autor(self, author):
+        self.autor = author
+    def set_editorial(self, editor):
+        self.editorial=editor
+    def set_fecha_lanz(self, date):
+        self.fecha_lanz=date
+    def set_genero(self, genre):
+        self.genero = genre
+    def set_precio(self,price):
+        self.precio=price
