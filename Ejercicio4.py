@@ -1,7 +1,6 @@
 from datetime import datetime
 class Cuenta_Bank():
 
-
     def __init__(self,id=int,titular=str,fecha=int,num_cuenta=float,saldo=float):
         self.id = id
         self.titular = titular
