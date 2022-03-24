@@ -8,7 +8,8 @@ class Libro():
         self.fecha_lanz = fecha_lanz
         self.genero = genero
         self.precio = precio
-
+    def __str__(self):
+        return "{"+(str(self.titulo))+', ' +(str(self.autor))+', '+(str(self.editorial))+', '+(str(self.fecha_lanz))+', '+(str(self.genero))+' '+(str(self.precio))+"}"
     def get_titulo(self):
         return self.titulo
     def get_autor(self):
@@ -34,3 +35,6 @@ class Libro():
         self.genero = genre
     def set_precio(self,price):
         self.precio=price
+
+libro1 = Libro('ESDLA','Tolkien','Minotauro','20-10-1995','Fantasía',20)
+
