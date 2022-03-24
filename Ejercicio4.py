@@ -1,6 +1,7 @@
 from datetime import datetime
-
 class Cuenta_Bank():
+
+
     def __init__(self,id=int,titular=str,fecha=int,num_cuenta=float,saldo=float):
         self.id = id
         self.titular = titular
@@ -18,6 +19,7 @@ class Cuenta_Bank():
         self.saldo = self.saldo + num_ingresar
 
     def transferir_dinero(self, cuenta2, cantidad):
+        cuenta2 = Cuenta_Bank()
         try:
             self.retirar_dinero(cantidad)
             cuenta2.ingresar_dinero(cantidad)
